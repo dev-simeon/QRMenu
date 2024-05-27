@@ -69,7 +69,7 @@ body{
 }
 
 .hero{
-    padding-top: 2.325rem;
+    padding-top: 4.5rem;
 }
 
 .blob{
@@ -90,6 +90,14 @@ h1{
     margin: 0 auto;
 }
 
+.content p,
+.cta-text{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 section,
 .section{
     padding-top: 4.375rem;
@@ -99,6 +107,20 @@ section,
 .font-small {
     font-size: 13px;
 }
+
+.navbar-nav .nav-link.active{
+    color: var(--bg-secondary);
+}
+
+.navbar-nav .nav-link.active::after,
+.navbar-nav .nav-link:hover::after{
+    display: block;
+    margin-top: 7px;
+    content: '';
+    width: 50%;
+    border-bottom: 2px solid var(--bg-secondary);
+}
+
 
 .steps-wrapper{
     max-width: 330px;
@@ -301,6 +323,10 @@ section.how-it-works{
 
 
 @media screen and (max-width: 767px) {
+    .hero{
+        padding-top: 3rem;
+    }
+
     .blob{
         width: 35rem;
         height: 37rem;
@@ -328,6 +354,10 @@ section.how-it-works{
 
     .video-section-bg .img-fluid{
         width: 80%;
+    }
+
+    p.text-accent{
+        font-size: 13px;
     }
     
 }
@@ -467,7 +497,7 @@ section.how-it-works{
     section.how-it-works{
         gap: 7rem;
     }
-    
+
     .contact-wrapper{
         flex-direction: column-reverse !important;
     }

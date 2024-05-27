@@ -14,7 +14,7 @@
     <nav class="navbar py-3">
         <div class="container px-4 px-sm-3">
             <a class="navbar-brand text-decoration-none text-secondary me-0 fw-semibold fs-5" href="/">
-                QuickMenu
+                QRMenu
             </a>
 
             <button title="offcanvas" type="button" class="btn d-block d-lg-none" data-bs-toggle="offcanvas"
@@ -27,30 +27,29 @@
                     </svg>
                 </span>
             </button>
-            <div class="d-none d-lg-flex gap-5">
-                <ul class="navbar-nav flex-row gap-3">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">How it Works</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Why Choose Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                </ul>
+            <ul class="navbar-nav d-none d-lg-flex flex-row gap-3">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">How it Works</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Why Choose Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+            </ul>
 
-                <div class="nav-item d-flex align-items-center gap-2">
-                    <button type="button" title="button" class="btn btn-outline-primary px-4">Login</button>
-                    <button type="button" title="button" class="btn btn-primary px-3">Get started</button>
-                </div>
+            <div class="nav-item d-none d-lg-flex align-items-center gap-2">
+                <button type="button" title="button" class="btn btn-outline-primary px-4">Login</button>
+                <button type="button" title="button" class="btn btn-primary px-3">Get started</button>
             </div>
+
             <div class="offcanvas offcanvas-end" data-bs-scroll="true" id="navmenu">
                 <div class="offcanvas-header pe-5 pt-4 justify-content-end mt-1 px-0">
                     <button type="button" class="btn-close btn-close" data-bs-dismiss="offcanvas"
@@ -116,7 +115,7 @@
             </div>
         </section>
 
-        <section class="how-it-works d-flex pt-3 pt-md-5 p flex-column pb-0 position-relative">
+        <section class="how-it-works d-flex pt-4 pt-md-5 p flex-column pb-0 position-relative">
             <div class="dotted-blob"></div>
             <div class="d-flex container-fluid px-4 px-xl-0 flex-column align-items-center gap-5">
                 <div class="d-flex flex-column gap-1 text-center">
@@ -306,7 +305,7 @@
                                     <p class="mb-0 font-small">4.5</p>
                                 </div>
                             </div>
-                            <p class="mb-0">“Wow... I am very happy to use this VPN, it turned out to be more than my
+                            <p class="mb-0 font-small">“Wow... I am very happy to use this VPN, it turned out to be more than my
                                 expectations and so far there have been no problems. LaslesVPN always the best”.</p>
 
                         </div>
@@ -330,7 +329,7 @@
                                     <p class="mb-0 font-small">4.5</p>
                                 </div>
                             </div>
-                            <p class="mb-0">“Wow... I am very happy to use this VPN, it turned out to be more than my
+                            <p class="mb-0 font-small">“Wow... I am very happy to use this VPN, it turned out to be more than my
                                 expectations and so far there have been no problems. LaslesVPN always the best”.</p>
 
                         </div>
@@ -354,7 +353,7 @@
                                     <p class="mb-0 font-small">4.5</p>
                                 </div>
                             </div>
-                            <p class="mb-0">“Wow... I am very happy to use this VPN, it turned out to be more than my
+                            <p class="mb-0 font-small">“Wow... I am very happy to use this VPN, it turned out to be more than my
                                 expectations and so far there have been no problems. LaslesVPN always the best”.</p>
 
                         </div>
@@ -398,8 +397,15 @@
             <div
                 class="d-flex flex-column text-center text-lg-start flex-lg-row justify-content-center gap-4 align-items-center cta rounded-4">
                 <div class="d-flex flex-column gap-1 col-md-9 col-xl-8 text-white">
-                    <h2 class="mb-0 fw-semibold">Ready to Discard that Paper Menu?</h2>
-                    <p class="mb-0 col-lg-11">Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat,
+                    <h2 class="mb-0 fw-semibold d-none d-lg-block">Ready to Discard that Paper Menu?</h2>
+                    <h2 class="mb-0  fw-semibold d-flex d-lg-none flex-column">
+                        <span>
+                            Ready to Discard that
+                        </span>
+                        <span>
+                            Paper Menu?
+                        </spa></h2>
+                    <p class="mb-0 col-lg-11 cta-text">Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat,
                         viverra magna risus aliquam massa. Ac aliquam ac volutpat.</p>
                 </div>
                 <div>
@@ -458,7 +464,7 @@
                     <a href="#"><img src="./images/circum_twitter.svg" alt="social-link" class="img-fluid"></a>
                     <a href="#"><img src="./images/openmoji_instagram.svg" alt="social-link" class="img-fluid"></a>
                 </div>
-                <p class="mb-0 font-small">&copy; copyright 2022 QuickMenu. All Rights Reserved</p>
+                <p class="mb-0 font-small">&copy; copyright 2022 QRMenu. All Rights Reserved</p>
             </div>
         </footer>
 
