@@ -1,362 +1,473 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>QRMenu</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        
-        <link rel="stylesheet" href="css/styles.css">
-    </head>
 
-    <body>
-        <nav class="navbar py-3">
-            <div class="container px-4 px-sm-3">
-              <a class="navbar-brand" href="#">Navbar</a>
-                <div class="d-none d-md-flex flex-row gap-5">
-                    <ul class="navbar-nav flex-row gap-3 align-items-center">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRMenu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar py-3">
+        <div class="container px-4 px-sm-3">
+            <a class="navbar-brand text-decoration-none text-secondary me-0 fw-semibold fs-5" href="/">
+                QuickMenu
+            </a>
+
+            <button title="offcanvas" type="button" class="btn d-block d-lg-none" data-bs-toggle="offcanvas"
+                data-bs-target="#navmenu">
+                <span>
+                    <svg class="text-secondary" width="24" height="24" viewBox="0 0 48 32" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 32H0V26.6667H24V32ZM48 18.6667H0V13.3333H48V18.6667ZM48 5.33333H24V0H48V5.33333Z"
+                            fill="#333333" />
+                    </svg>
+                </span>
+            </button>
+            <div class="d-none d-lg-flex gap-5">
+                <ul class="navbar-nav flex-row gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">How it Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Why Choose Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                </ul>
+
+                <div class="nav-item d-flex align-items-center gap-2">
+                    <button type="button" title="button" class="btn btn-outline-primary px-4">Login</button>
+                    <button type="button" title="button" class="btn btn-primary px-3">Get started</button>
+                </div>
+            </div>
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" id="navmenu">
+                <div class="offcanvas-header pe-5 pt-4 justify-content-end mt-1 px-0">
+                    <button type="button" class="btn-close btn-close" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body px-4 d-flex flex-column gap-4">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">How it Works</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
+                            <a class="nav-link" href="#">Why Choose Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="#">Pricing</a>
                         </li>
                     </ul>
-                    <div class="d-flex align-items-center gap-3">
+
+                    <div class="nav-item d-flex align-items-center gap-2">
                         <button type="button" title="button" class="btn btn-outline-primary px-4">Login</button>
                         <button type="button" title="button" class="btn btn-primary px-3">Get started</button>
                     </div>
                 </div>
-                <div class="d-block d-md-none">
-                    <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.49992 7C3.1905 7 2.89375 7.12292 2.67496 7.34171C2.45617 7.5605 2.33325 7.85725 2.33325 8.16667C2.33325 8.47609 2.45617 8.77283 2.67496 8.99162C2.89375 9.21042 3.1905 9.33333 3.49992 9.33333H31.4999C31.8093 9.33333 32.1061 9.21042 32.3249 8.99162C32.5437 8.77283 32.6666 8.47609 32.6666 8.16667C32.6666 7.85725 32.5437 7.5605 32.3249 7.34171C32.1061 7.12292 31.8093 7 31.4999 7H3.49992ZM2.33325 17.5C2.33325 17.1906 2.45617 16.8938 2.67496 16.675C2.89375 16.4562 3.1905 16.3333 3.49992 16.3333H31.4999C31.8093 16.3333 32.1061 16.4562 32.3249 16.675C32.5437 16.8938 32.6666 17.1906 32.6666 17.5C32.6666 17.8094 32.5437 18.1062 32.3249 18.325C32.1061 18.5437 31.8093 18.6667 31.4999 18.6667H3.49992C3.1905 18.6667 2.89375 18.5437 2.67496 18.325C2.45617 18.1062 2.33325 17.8094 2.33325 17.5ZM2.33325 26.8333C2.33325 26.5239 2.45617 26.2272 2.67496 26.0084C2.89375 25.7896 3.1905 25.6667 3.49992 25.6667H31.4999C31.8093 25.6667 32.1061 25.7896 32.3249 26.0084C32.5437 26.2272 32.6666 26.5239 32.6666 26.8333C32.6666 27.1428 32.5437 27.4395 32.3249 27.6583C32.1061 27.8771 31.8093 28 31.4999 28H3.49992C3.1905 28 2.89375 27.8771 2.67496 27.6583C2.45617 27.4395 2.33325 27.1428 2.33325 26.8333Z" fill="#333333"/>
-                    </svg> 
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="d-flex flex-column gap-5 px-4 px-sm-3 align-items-center container">
+                <div class="d-flex flex-column align-items-center gap-3 col-lg-9">
+                    <div class="content d-flex flex-column gap-1 text-center">
+                        <h1 class="mb-0 fw-semibold">THE FASTEST WAY TO ORDER & PAY AT YOUR RESTAURANT</h1>
+                        <p class="mb-0 col-lg-10 mx-auto">Customers scan the QR code on their table to instantly access
+                            a digital menu,‍ they can order and pay for food and beverages on their mobile devices
+                            safely and quickly, without waiting for a server.</p>
+                    </div>
+                    <div>
+                        <button type="button" title="button"
+                            class="d-flex align-items-center gap-2 btn btn-primary px-3">
+                            <span>
+                                Get started
+                            </span>
+                            <svg width="20" height="21" viewBox="0 0 30 31" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.25 14.1661H21.075L16.5375 8.71612C16.3253 8.46084 16.2232 8.13174 16.2537 7.80121C16.2842 7.47068 16.4447 7.16579 16.7 6.95362C16.9553 6.74144 17.2844 6.63937 17.6149 6.66984C17.9454 6.70031 18.2503 6.86085 18.4625 7.11612L24.7125 14.6161C24.7545 14.6758 24.7922 14.7384 24.825 14.8036C24.825 14.8661 24.825 14.9036 24.9125 14.9661C24.9692 15.1094 24.9988 15.262 25 15.4161C24.9988 15.5702 24.9692 15.7228 24.9125 15.8661C24.9125 15.9286 24.9125 15.9661 24.825 16.0286C24.7922 16.0938 24.7545 16.1565 24.7125 16.2161L18.4625 23.7161C18.345 23.8572 18.1978 23.9707 18.0314 24.0485C17.8651 24.1262 17.6836 24.1664 17.5 24.1661C17.2079 24.1667 16.9249 24.065 16.7 23.8786C16.5734 23.7737 16.4688 23.6448 16.3921 23.4994C16.3154 23.3539 16.2682 23.1948 16.2531 23.0311C16.238 22.8674 16.2553 22.7023 16.3041 22.5453C16.3529 22.3883 16.4322 22.2424 16.5375 22.1161L21.075 16.6661H6.25C5.91848 16.6661 5.60054 16.5344 5.36612 16.3C5.13169 16.0656 5 15.7476 5 15.4161C5 15.0846 5.13169 14.7667 5.36612 14.5322C5.60054 14.2978 5.91848 14.1661 6.25 14.1661Z"
+                                    fill="#fff" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="position-relative">
+                    <div class="blob"></div>
+                    <img class="hero-img img-fluid" alt="hero-img" src="./images/Screen mockup (REPLACE FILL) 1.png" />
                 </div>
             </div>
-        </nav>
+        </section>
 
-        <main>
-            <section class="hero position-relative">
-                <div class="blob"></div>
-                <div class="d-flex flex-column gap-5 px-4 px-sm-3 align-items-center container">
-                    <div class="d-flex flex-column align-items-center gap-3 col-lg-9">
-                        <div class="content d-flex flex-column gap-1 text-center">
-                            <h1 class="mb-0 fw-semibold">THE FASTEST WAY TO ORDER & PAY AT YOUR RESTAURANT</h1>
-                            <p class="mb-0 col-lg-10 mx-auto">Customers scan the QR code on their table to instantly access a digital menu,‍ they can order and pay for food and beverages on their mobile devices safely and quickly, without waiting for a server.</p>
-                        </div>
-                        <div>
-                            <button type="button" title="button" class="d-flex align-items-center gap-2 btn btn-primary px-3">
-                                <span>
-                                    Get started
-                                </span>
-                                <svg width="20" height="21" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6.25 14.1661H21.075L16.5375 8.71612C16.3253 8.46084 16.2232 8.13174 16.2537 7.80121C16.2842 7.47068 16.4447 7.16579 16.7 6.95362C16.9553 6.74144 17.2844 6.63937 17.6149 6.66984C17.9454 6.70031 18.2503 6.86085 18.4625 7.11612L24.7125 14.6161C24.7545 14.6758 24.7922 14.7384 24.825 14.8036C24.825 14.8661 24.825 14.9036 24.9125 14.9661C24.9692 15.1094 24.9988 15.262 25 15.4161C24.9988 15.5702 24.9692 15.7228 24.9125 15.8661C24.9125 15.9286 24.9125 15.9661 24.825 16.0286C24.7922 16.0938 24.7545 16.1565 24.7125 16.2161L18.4625 23.7161C18.345 23.8572 18.1978 23.9707 18.0314 24.0485C17.8651 24.1262 17.6836 24.1664 17.5 24.1661C17.2079 24.1667 16.9249 24.065 16.7 23.8786C16.5734 23.7737 16.4688 23.6448 16.3921 23.4994C16.3154 23.3539 16.2682 23.1948 16.2531 23.0311C16.238 22.8674 16.2553 22.7023 16.3041 22.5453C16.3529 22.3883 16.4322 22.2424 16.5375 22.1161L21.075 16.6661H6.25C5.91848 16.6661 5.60054 16.5344 5.36612 16.3C5.13169 16.0656 5 15.7476 5 15.4161C5 15.0846 5.13169 14.7667 5.36612 14.5322C5.60054 14.2978 5.91848 14.1661 6.25 14.1661Z" fill="#fff"/>
-                                </svg>                        
-                            </button>
-                        </div>
-                    </div>
-                    <div>
-                        <img class="hero-img img-fluid" alt="hero-img" src="./images/Screen mockup (REPLACE FILL) 1.png" />
-                    </div>
+        <section class="how-it-works d-flex pt-3 pt-md-5 p flex-column pb-0 position-relative">
+            <div class="dotted-blob"></div>
+            <div class="d-flex container-fluid px-4 px-xl-0 flex-column align-items-center gap-5">
+                <div class="d-flex flex-column gap-1 text-center">
+                    <h2 class="mb-0 fw-semibold">How it works</h2>
+                    <p class="mb-0 col-sm-8 col-lg-7 mx-auto">With lots of unique blocks, you can easily build a page
+                        easily without any coding. </p>
                 </div>
-            </section>
-            
-            <section class="how-it-works d-flex pt-3 pt-md-5 p flex-column pb-0">
-                <div class="d-flex container-fluid px-md-4 px-xl-0 flex-column align-items-center gap-5">
-                    <div class="d-flex flex-column gap-1 text-center">
-                        <h2 class="mb-0 fw-semibold">How it works</h2>
-                        <p class="mb-0 col-sm-8 col-lg-7 mx-auto">With lots of unique blocks, you can easily build a page easily without any coding. </p>
+
+                <div class="d-flex flex-column flex-md-row justify-content-center gap-4 gap-md-3 ">
+                    <div class="col px-0 d-flex flex-column align-items-center gap-3 steps-wrapper">
+                        <div class="d-flex justify-content-center align-items-center steps">
+                            <p class="mb-0">1</p>
+                        </div>
+                        <div class="d-flex flex-column align-items-center text-center gap-1">
+                            <h4 class="mb-0">Install App</h4>
+                            <p class="mb-0">With lots of unique blocks, you can easily build a page easily without any
+                                coding.</p>
+                        </div>
                     </div>
-    
-                    <div class="d-flex flex-column flex-md-row justify-content-center gap-4 gap-md-3 ">
-                        <div class="col px-0 d-flex flex-column align-items-center gap-3 steps-wrapper">
-                            <div class="d-flex justify-content-center align-items-center steps">
-                                <p class="mb-0">1</p>
-                            </div>
-                            <div class="d-flex flex-column align-items-center text-center gap-1">
-                                <h4 class="mb-0">Install App</h4>
-                                <p class="mb-0">With lots of unique blocks, you can easily build a page easily without any coding.</p>
-                            </div>
+
+                    <div class="col px-0 d-flex flex-column align-items-center gap-3 steps-wrapper">
+                        <div class="d-flex justify-content-center align-items-center steps">
+                            <p class="mb-0">2</p>
                         </div>
-        
-                        <div class="col px-0 d-flex flex-column align-items-center gap-3 steps-wrapper">
-                            <div class="d-flex justify-content-center align-items-center steps">
-                                <p class="mb-0">2</p>
-                            </div>
-                            <div class="d-flex flex-column align-items-center text-center gap-1">
-                                <h4 class="mb-0">Install App</h4>
-                                <p class="mb-0">With lots of unique blocks, you can easily build a page easily without any coding.</p>
-                            </div>
+                        <div class="d-flex flex-column align-items-center text-center gap-1">
+                            <h4 class="mb-0">Install App</h4>
+                            <p class="mb-0">With lots of unique blocks, you can easily build a page easily without any
+                                coding.</p>
                         </div>
-        
-                        <div class="col px-0 d-flex flex-column align-items-center gap-3 steps-wrapper">
-                            <div class="d-flex justify-content-center align-items-center steps">
-                                <p class="mb-0">3</p>
-                            </div>
-                            <div class="d-flex flex-column align-items-center text-center gap-1">
-                                <h4 class="mb-0">Install App</h4>
-                                <p class="mb-0">With lots of unique blocks, you can easily build a page easily without any coding.</p>
-                            </div>
+                    </div>
+
+                    <div class="col px-0 d-flex flex-column align-items-center gap-3 steps-wrapper">
+                        <div class="d-flex justify-content-center align-items-center steps">
+                            <p class="mb-0">3</p>
+                        </div>
+                        <div class="d-flex flex-column align-items-center text-center gap-1">
+                            <h4 class="mb-0">Install App</h4>
+                            <p class="mb-0">With lots of unique blocks, you can easily build a page easily without any
+                                coding.</p>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="d-flex justify-content-center video-section-bg">
-                    <img class="img-fluid how-it-works-video" alt="how-it-works-video" src="./images/VIdeo.png"/>
-                </div>
-            </section>
+            <div class="d-flex justify-content-center video-section-bg position-relative">
+                <div class="video-section dotted-blob"></div>
+                <div class="video-section dotted-blob-2"></div>
+                <img class="img-fluid how-it-works-video" alt="how-it-works-video" src="./images/VIdeo.png" />
+            </div>
+        </section>
 
-            <section class="why-choose-us bg-grey">
-                <div class="px-4 d-flex flex-column container gap-4 gap-md-5">
-                    <div class="text-center heading-wrapper">
-                        <p class="mb-0 text-accent fw-bold">WHY CHOOSE US</p>
-                        <h2 class="mb-0 d-none d-md-flex flex-column fw-semibold">
-                            <span>
-                                People choose us because we serve the
-                            </span>
-                            <span>
-                                best for everyone
-                            </span>
-                            </h2>
-                            <h2 class="mb-0 fw-semibold d-block d-md-none">People choose us because we serve the best for everyone</h2>
-                    </div>
-                    <div class="d-flex flex-column align-items-center gap-4">
-                        <div class="d-flex flex-column flex-md-row gap-4 gap-md-3 justify-content-center">
-                            <div class="d-flex gap-3 why-choose-us-card">
-                                <div>
-                                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.1" width="59.6441" height="59.6441" rx="2.18203" fill="#222222"/>
-                                        <path d="M35.9674 24.4307C34.3706 22.8407 32.2846 22.0457 30.1985 22.0457V30.1995L24.4297 35.9684C27.6165 39.1552 32.7738 39.1552 35.9606 35.9684C39.1474 32.7816 39.1474 27.6175 35.9674 24.4307Z" fill="#222222"/>
-                                        <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M16.609 30.1992C16.609 22.6908 22.6904 16.6094 30.1988 16.6094C37.7071 16.6094 43.7886 22.6908 43.7886 30.1992C43.7886 37.7007 37.7071 43.789 30.1988 43.789C22.6904 43.789 16.609 37.7075 16.609 30.1992ZM19.3268 30.1995C19.3268 36.2062 24.192 41.0714 30.1987 41.0714C36.2054 41.0714 41.0705 36.2062 41.0705 30.1995C41.0705 24.1928 36.2054 19.3277 30.1987 19.3277C24.192 19.3277 19.3268 24.1928 19.3268 30.1995Z" fill="#222222"/>
-                                    </svg>
-                                </div>
-                                
-                                <div class="d-flex flex-column gap-2">
-                                    <h4 class="mb-0">Easy feedback sharing</h4>
-                                    <p class="mb-0">With lots of unique blocks, you can easily build a page without coding. Build your next landing page.</p>
-                                </div>
-                            </div>
-                            <div class="d-flex gap-3 why-choose-us-card">
-                                <div>
-                                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.1" x="0.355896" width="59.6441" height="59.6441" rx="2.18203" fill="#5349BE"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M23.006 23.9167C23.006 20.0394 25.8926 15.8545 30.5559 15.8545C35.2192 15.8545 38.1058 20.0394 38.1058 23.9167C38.1058 29.6626 34.1868 33.2192 30.5559 33.2192C26.9251 33.2192 23.006 29.6626 23.006 23.9167ZM24.2917 24.57C24.5648 29.1617 27.6665 31.9785 30.5562 31.9785C33.4459 31.9785 36.5471 29.1624 36.8214 24.5719C34.9496 24.3213 33.2006 23.5318 31.7969 22.294C30.063 23.8283 27.8515 24.6674 25.5047 24.6674C25.1039 24.6674 24.7 24.6283 24.2917 24.57Z" fill="#5349BE"/>
-                                        <path opacity="0.5" d="M41.8638 36.3772L35.3218 32.4644C33.7885 33.7839 31.9558 34.5095 30.1784 34.5095C28.4011 34.5095 26.5683 33.7839 25.0351 32.4644L18.4931 36.3772C17.5512 36.9404 16.9661 37.9709 16.9661 39.0659V43.917C16.9661 44.2638 17.248 44.5442 17.5953 44.5442H29.5493V38.2725C29.5493 37.9257 29.8305 37.6454 30.1784 37.6454C30.5264 37.6454 30.8076 37.9257 30.8076 38.2725V44.5442H42.7616C43.1089 44.5442 43.3907 44.2638 43.3907 43.917V39.0659C43.3907 37.9709 42.8056 36.9404 41.8638 36.3772Z" fill="#5349BE"/>
-                                    </svg>  
-                                </div>                             
-                                <div class="d-flex flex-column gap-2">
-                                    <h4 class="mb-0">Easy feedback sharing</h4>
-                                    <p class="mb-0">With lots of unique blocks, you can easily build a page without coding. Build your next landing page.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex flex-column flex-md-row gap-4 gap-md-3 justify-content-center">
-                            <div class="d-flex gap-3 why-choose-us-card">
-                                <div>
-                                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.1" x="0.355896" width="59.6441" height="59.6441" rx="2.18203" fill="#68D585"/>
-                                        <path opacity="0.5" d="M42.7598 29.4446C41.6252 34.5461 36.1415 38.4281 29.5628 38.4281C28.6301 38.4281 27.6991 38.344 26.781 38.1845C29.0367 40.1376 32.529 41.1228 36.138 40.589L40.9684 42.9739C41.0506 43.0142 41.1399 43.0344 41.2291 43.0344C41.3359 43.0344 41.4421 43.0056 41.536 42.9486C41.7075 42.8438 41.8125 42.6584 41.8125 42.4586V38.0659C43.3192 36.7162 44.1457 35.0142 44.1457 33.2459C44.1457 31.894 43.6575 30.5881 42.7598 29.4446Z" fill="#68D585"/>
-                                        <path d="M29.4242 17.3645C22.5549 17.3645 16.9669 21.7584 16.9669 27.1595C16.9669 29.2354 17.7861 31.2146 19.3397 32.8982V38.683C19.3397 38.8829 19.4465 39.0679 19.6209 39.1733C19.7164 39.2304 19.8243 39.2592 19.9329 39.2592C20.0236 39.2592 20.1144 39.239 20.198 39.1987L25.7327 36.5108C26.9398 36.8052 28.1802 36.9545 29.4242 36.9545C36.2935 36.9545 41.8815 32.5606 41.8815 27.1595C41.8815 21.7584 36.2935 17.3645 29.4242 17.3645Z" fill="#68D585"/>
-                                    </svg>
-                                </div>
-                                <div class="d-flex flex-column gap-2">
-                                    <h4 class="mb-0">Easy feedback sharing</h4>
-                                    <p class="mb-0">With lots of unique blocks, you can easily build a page without coding. Build your next landing page.</p>
-                                </div>
-                            </div>
-                            <div class="d-flex gap-3 why-choose-us-card">
-                                <div>
-                                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.1" width="59.6441" height="59.6441" rx="2.18203" fill="#F64B4B"/>
-                                        <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M29.8138 40.0988L18.987 31.7168L16.6088 33.5584L29.8211 43.7893L43.0334 33.5584L40.6405 31.7095L29.8138 40.0988Z" fill="#F64B4B"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M29.8213 36.2397L40.6333 27.9038L43.0336 26.0473L29.8213 15.855L16.609 26.0473L19.0019 27.8892L29.8213 36.2397Z" fill="#F64B4B"/>
-                                    </svg>
-                                </div>                         
-                                <div class="d-flex flex-column gap-2">
-                                    <h4 class="mb-0">Easy feedback sharing</h4>
-                                    <p class="mb-0">With lots of unique blocks, you can easily build a page without coding. Build your next landing page.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="container testimonials d-flex flex-column gap-4 gap-md-5">
-                <div class="d-flex flex-column gap-1 text-center heading-wrapper">
-                    <h2 class="mb-0 fw-semibold d-flex flex-column">
+        <section class="why-choose-us bg-grey">
+            <div class="px-4 d-flex flex-column container px-4 px-sm-3 gap-5">
+                <div class="text-center heading-wrapper">
+                    <p class="mb-0 text-accent fw-bold">WHY CHOOSE US</p>
+                    <h2 class="mb-0 d-none d-md-flex flex-column fw-semibold">
                         <span>
-                            Trusted by Thousands of
+                            People choose us because we serve the
                         </span>
                         <span>
-                            Happy Customer
+                            best for everyone
                         </span>
                     </h2>
-                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut lab</p>
+                    <h2 class="mb-0 fw-semibold d-block d-md-none">People choose us because we serve the best for
+                        everyone</h2>
                 </div>
-
-                <div class="d-flex flex-column gap-4">
-                    <div class="d-flex gap-3">
-                        <div class="card border">
-                            <div class="card-body d-flex flex-column p-4 gap-2">
-                                <div class="d-flex justify-content-between">
-                                    <div>
-                                        <h6 class="mb-0 fw-semibold">Viezh Robert</h6>
-                                        <p class="mb-0 font-small">Warsaw, Poland</p>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                    <div>
-                                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M8 0.416504L9.68386 5.59888H15.1329L10.7245 8.80176L12.4084 13.9841L8 10.7812L3.59161 13.9841L5.27547 8.80176L0.867076 5.59888H6.31614L8 0.416504Z" fill="#5349BE"/>
-                                        </svg>
-                                    </div>
-                                    <p class="mb-0 font-small">4.5</p>
-                                    </div>
-                                </div>
-                                <p class="mb-0">“Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best”.</p>
-                                
-                            </div>
-                        </div>
-                        <div class="card border">
-                            <div class="card-body d-flex flex-column p-4 gap-2">
-                                <div class="d-flex justify-content-between">
-                                    <div>
-                                        <h6 class="mb-0 fw-semibold">Viezh Robert</h6>
-                                        <p class="mb-0 font-small">Warsaw, Poland</p>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                    <div>
-                                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M8 0.416504L9.68386 5.59888H15.1329L10.7245 8.80176L12.4084 13.9841L8 10.7812L3.59161 13.9841L5.27547 8.80176L0.867076 5.59888H6.31614L8 0.416504Z" fill="#5349BE"/>
-                                        </svg>
-                                    </div>
-                                    <p class="mb-0 font-small">4.5</p>
-                                    </div>
-                                </div>
-                                <p class="mb-0">“Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best”.</p>
-                                
-                            </div>
-                        </div>
-                        <div class="card border">
-                            <div class="card-body d-flex flex-column p-4 gap-2">
-                                <div class="d-flex justify-content-between">
-                                    <div>
-                                        <h6 class="mb-0 fw-semibold">Viezh Robert</h6>
-                                        <p class="mb-0 font-small">Warsaw, Poland</p>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                    <div>
-                                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M8 0.416504L9.68386 5.59888H15.1329L10.7245 8.80176L12.4084 13.9841L8 10.7812L3.59161 13.9841L5.27547 8.80176L0.867076 5.59888H6.31614L8 0.416504Z" fill="#5349BE"/>
-                                        </svg>
-                                    </div>
-                                    <p class="mb-0 font-small">4.5</p>
-                                    </div>
-                                </div>
-                                <p class="mb-0">“Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best”.</p>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-center justify-content-sm-between align-items-center">
-                        <div class="d-flex gap-2 carousel-indicator-wrapper">
-                            <div class="carousel-indicator active">
-                            </div>
-                            <div class="carousel-indicator">
-                            </div>
-                            <div class="carousel-indicator">
-                            </div>
-                            <div class="carousel-indicator">
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center gap-1 d-none d-sm-block">
-                            <span>
-                                <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M23.75 14.1661H8.925L13.4625 8.71612C13.6747 8.46084 13.7768 8.13174 13.7463 7.80121C13.7158 7.47068 13.5553 7.16579 13.3 6.95362C13.0447 6.74144 12.7156 6.63937 12.3851 6.66984C12.0546 6.70031 11.7497 6.86085 11.5375 7.11612L5.2875 14.6161C5.24545 14.6758 5.20785 14.7384 5.175 14.8036C5.175 14.8661 5.175 14.9036 5.0875 14.9661C5.03084 15.1094 5.00118 15.262 5 15.4161C5.00118 15.5702 5.03084 15.7228 5.0875 15.8661C5.0875 15.9286 5.0875 15.9661 5.175 16.0286C5.20785 16.0938 5.24545 16.1565 5.2875 16.2161L11.5375 23.7161C11.655 23.8572 11.8022 23.9707 11.9686 24.0485C12.1349 24.1262 12.3164 24.1664 12.5 24.1661C12.7921 24.1667 13.0751 24.065 13.3 23.8786C13.4266 23.7737 13.5312 23.6448 13.6079 23.4994C13.6846 23.3539 13.7318 23.1948 13.7469 23.0311C13.762 22.8674 13.7447 22.7023 13.6959 22.5453C13.6471 22.3883 13.5678 22.2424 13.4625 22.1161L8.925 16.6661H23.75C24.0815 16.6661 24.3995 16.5344 24.6339 16.3C24.8683 16.0656 25 15.7476 25 15.4161C25 15.0846 24.8683 14.7667 24.6339 14.5322C24.3995 14.2978 24.0815 14.1661 23.75 14.1661Z" fill="#222222"/>
+                <div class="d-flex flex-column align-items-center gap-4">
+                    <div class="d-flex flex-column flex-md-row gap-4 gap-md-3 justify-content-center">
+                        <div class="d-flex gap-3 why-choose-us-card">
+                            <div>
+                                <svg class="benefit-icon" width="60" height="60" viewBox="0 0 60 60" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect opacity="0.1" width="59.6441" height="59.6441" rx="2.18203" fill="#222222" />
+                                    <path
+                                        d="M35.9674 24.4307C34.3706 22.8407 32.2846 22.0457 30.1985 22.0457V30.1995L24.4297 35.9684C27.6165 39.1552 32.7738 39.1552 35.9606 35.9684C39.1474 32.7816 39.1474 27.6175 35.9674 24.4307Z"
+                                        fill="#222222" />
+                                    <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M16.609 30.1992C16.609 22.6908 22.6904 16.6094 30.1988 16.6094C37.7071 16.6094 43.7886 22.6908 43.7886 30.1992C43.7886 37.7007 37.7071 43.789 30.1988 43.789C22.6904 43.789 16.609 37.7075 16.609 30.1992ZM19.3268 30.1995C19.3268 36.2062 24.192 41.0714 30.1987 41.0714C36.2054 41.0714 41.0705 36.2062 41.0705 30.1995C41.0705 24.1928 36.2054 19.3277 30.1987 19.3277C24.192 19.3277 19.3268 24.1928 19.3268 30.1995Z"
+                                        fill="#222222" />
                                 </svg>
-                            </span>
-                            <span>
-                                <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6.25 14.1661H21.075L16.5375 8.71612C16.3253 8.46084 16.2232 8.13174 16.2537 7.80121C16.2842 7.47068 16.4447 7.16579 16.7 6.95362C16.9553 6.74144 17.2844 6.63937 17.6149 6.66984C17.9454 6.70031 18.2503 6.86085 18.4625 7.11612L24.7125 14.6161C24.7545 14.6758 24.7922 14.7384 24.825 14.8036C24.825 14.8661 24.825 14.9036 24.9125 14.9661C24.9692 15.1094 24.9988 15.262 25 15.4161C24.9988 15.5702 24.9692 15.7228 24.9125 15.8661C24.9125 15.9286 24.9125 15.9661 24.825 16.0286C24.7922 16.0938 24.7545 16.1565 24.7125 16.2161L18.4625 23.7161C18.345 23.8572 18.1978 23.9707 18.0314 24.0485C17.8651 24.1262 17.6836 24.1664 17.5 24.1661C17.2079 24.1667 16.9249 24.065 16.7 23.8786C16.5734 23.7737 16.4688 23.6448 16.3921 23.4994C16.3154 23.3539 16.2682 23.1948 16.2531 23.0311C16.238 22.8674 16.2553 22.7023 16.3041 22.5453C16.3529 22.3883 16.4322 22.2424 16.5375 22.1161L21.075 16.6661H6.25C5.91848 16.6661 5.60054 16.5344 5.36612 16.3C5.13169 16.0656 5 15.7476 5 15.4161C5 15.0846 5.13169 14.7667 5.36612 14.5322C5.60054 14.2978 5.91848 14.1661 6.25 14.1661Z" fill="#486284"/>
-                                </svg>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                
-                
-            </section>
+                            </div>
 
-            <section class="d-flex justify-content-center py-0">
-                <div class="d-flex flex-column text-center text-lg-start flex-lg-row justify-content-center gap-4 align-items-center cta rounded-4">
-                    <div class="d-flex flex-column gap-1 col-md-9 col-xl-8 text-white">
-                        <h2 class="mb-0 fw-semibold">Ready to Discard that Paper Menu?</h2>
-                        <p class="mb-0 col-lg-11">Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat, viverra magna risus aliquam massa. Ac aliquam ac volutpat.</p>
-                    </div>
-                    <div>
-                        <button type="button" title="btn" class="btn btn-secondary px-3">Get Started</button>
-                    </div>
-                </div>
-            </section>
-
-            <footer class="py-5 container d-flex flex-column gap-4">
-                <div class="d-flex flex-row justify-content-center align-items-center gap-4 pb-5 border-bottom contact-wrapper">
-                    <div class="d-flex flex-column gap-1 contact order-1 order-md-0">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20.6981 15.1997L16.2713 13.2188C16.0996 13.1445 15.9122 13.1142 15.726 13.1306C15.5397 13.1469 15.3604 13.2095 15.2044 13.3125C15.1919 13.3204 15.18 13.3292 15.1688 13.3388L12.8438 15.3207C12.792 15.3522 12.7333 15.3705 12.6728 15.374C12.6123 15.3774 12.5519 15.3658 12.4969 15.3403C10.9744 14.6053 9.39845 13.0416 8.66345 11.5369C8.63745 11.4823 8.62538 11.4222 8.62832 11.3618C8.63127 11.3014 8.64914 11.2427 8.68032 11.191L10.6678 8.82753C10.6772 8.81628 10.6856 8.80409 10.6941 8.79191C10.7968 8.6361 10.8592 8.45717 10.8755 8.27125C10.8919 8.08534 10.8618 7.89827 10.7878 7.72691L8.80314 3.30753C8.70732 3.0837 8.54148 2.89699 8.33051 2.77545C8.11954 2.6539 7.87483 2.60408 7.63314 2.63347C6.45336 2.78902 5.37054 3.36872 4.58694 4.26428C3.80334 5.15985 3.37254 6.31005 3.37501 7.50003C3.37501 14.7375 9.26251 20.625 16.5 20.625C17.69 20.6275 18.8402 20.1967 19.7358 19.4131C20.6313 18.6295 21.211 17.5467 21.3666 16.3669C21.3957 16.1263 21.3464 15.8827 21.226 15.6724C21.1056 15.4621 20.9204 15.2963 20.6981 15.1997ZM20.625 16.2732C20.4926 17.2723 20.0009 18.189 19.2417 18.8519C18.4825 19.5148 17.5079 19.8785 16.5 19.875C9.67689 19.875 4.12501 14.3232 4.12501 7.50003C4.12152 6.49217 4.48523 5.51754 5.14813 4.75835C5.81103 3.99917 6.72775 3.50742 7.72689 3.37503C7.74187 3.37413 7.7569 3.37413 7.77189 3.37503C7.84587 3.37566 7.91801 3.39816 7.97923 3.4397C8.04045 3.48124 8.08802 3.53996 8.11595 3.60847L10.095 8.02784C10.1181 8.08186 10.1282 8.14054 10.1244 8.19916C10.1207 8.25779 10.1032 8.31471 10.0734 8.36534L8.08689 10.7278C8.07751 10.74 8.06814 10.7513 8.0597 10.7644C7.95386 10.9263 7.89153 11.1126 7.87872 11.3056C7.86591 11.4986 7.90306 11.6916 7.98657 11.866C8.80126 13.5338 10.4813 15.2016 12.1678 16.0163C12.3434 16.0993 12.5375 16.1354 12.7312 16.1211C12.9249 16.1068 13.1116 16.0426 13.2731 15.9347L13.3078 15.9085L15.6356 13.9285C15.6854 13.898 15.7417 13.8799 15.7999 13.8755C15.8581 13.8711 15.9165 13.8806 15.9703 13.9032L20.3963 15.8869C20.471 15.918 20.5336 15.9724 20.5748 16.042C20.616 16.1116 20.6336 16.1927 20.625 16.2732Z" fill="#333333"/>
-                        </svg>
-                            
-                        <div class="d-flex flex-column gap-2">
-                            <h5 class="mb-0">Call Us:</h5>
-                            <a class="text-decoration-none text-secondary" href="tel:+2348099626426">+2348099626426</a>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row gap-4 order-md-1">
-                        <div class="d-flex flex-column gap-1 contact">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2.625C10.1458 2.625 8.33324 3.17483 6.79153 4.20497C5.24982 5.23511 4.04821 6.69929 3.33863 8.41234C2.62906 10.1254 2.44341 12.0104 2.80514 13.829C3.16688 15.6475 4.05976 17.318 5.37088 18.6291C6.682 19.9402 8.35246 20.8331 10.171 21.1949C11.9896 21.5566 13.8746 21.3709 15.5877 20.6614C17.3007 19.9518 18.7649 18.7502 19.795 17.2085C20.8252 15.6668 21.375 13.8542 21.375 12C21.3723 9.51443 20.3837 7.13145 18.6261 5.37389C16.8686 3.61633 14.4856 2.62773 12 2.625ZM12 20.625C10.2941 20.625 8.62658 20.1192 7.20821 19.1714C5.78984 18.2237 4.68435 16.8767 4.03154 15.3006C3.37874 13.7246 3.20793 11.9904 3.54073 10.3173C3.87353 8.64426 4.69498 7.10743 5.90121 5.9012C7.10744 4.69498 8.64426 3.87352 10.3174 3.54073C11.9904 3.20793 13.7246 3.37873 15.3006 4.03154C16.8767 4.68434 18.2237 5.78983 19.1714 7.20821C20.1192 8.62658 20.625 10.2941 20.625 12C20.6225 14.2867 19.713 16.4791 18.0961 18.0961C16.4791 19.713 14.2867 20.6225 12 20.625ZM17.625 12C17.625 12.0995 17.5855 12.1948 17.5152 12.2652C17.4448 12.3355 17.3495 12.375 17.25 12.375H12C11.9005 12.375 11.8052 12.3355 11.7348 12.2652C11.6645 12.1948 11.625 12.0995 11.625 12V6.75C11.625 6.65054 11.6645 6.55516 11.7348 6.48483C11.8052 6.41451 11.9005 6.375 12 6.375C12.0995 6.375 12.1948 6.41451 12.2652 6.48483C12.3355 6.55516 12.375 6.65054 12.375 6.75V11.625H17.25C17.3495 11.625 17.4448 11.6645 17.5152 11.7348C17.5855 11.8052 17.625 11.9005 17.625 12Z" fill="#333333"/>
-                            </svg>                                                       
                             <div class="d-flex flex-column gap-2">
-                                <h5 class="mb-0">Working Hours:</h5>
-                                <a class="text-decoration-none text-secondary" href="#">Mon - Fri : 8.00am - 4.00pm</a>
+                                <h4 class="mb-0">Easy feedback sharing</h4>
+                                <p class="mb-0">With lots of unique blocks, you can easily build a page without coding.
+                                    Build your next landing page.</p>
                             </div>
                         </div>
-                        <div class="d-flex flex-column gap-1 contact">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M19.4349 4.06494H4.56494C3.9019 4.06494 3.26602 4.32833 2.79717 4.79717C2.32833 5.26602 2.06494 5.9019 2.06494 6.56494V17.4349C2.06494 18.098 2.32833 18.7339 2.79717 19.2027C3.26602 19.6715 3.9019 19.9349 4.56494 19.9349H19.4349C20.098 19.9349 20.7339 19.6715 21.2027 19.2027C21.6715 18.7339 21.9349 18.098 21.9349 17.4349V6.56494C21.9349 5.9019 21.6715 5.26602 21.2027 4.79717C20.7339 4.32833 20.098 4.06494 19.4349 4.06494ZM4.56494 5.06494H19.4349C19.8134 5.06409 20.178 5.20727 20.4547 5.46542C20.7314 5.72357 20.8995 6.07735 20.9249 6.45494C18.4549 7.77494 15.9749 9.08494 13.4949 10.4049C13.16 10.6162 12.8049 10.7937 12.4349 10.9349C12.1449 10.9924 11.8458 10.9873 11.5579 10.9201C11.2699 10.8528 10.9996 10.7249 10.7649 10.5449C9.34494 9.79494 7.92494 9.03494 6.51494 8.28494C5.37494 7.68494 4.21494 7.07494 3.07494 6.46494C3.0979 6.08557 3.26496 5.72932 3.54194 5.46907C3.81892 5.20882 4.18488 5.06425 4.56494 5.06494ZM20.9349 17.4349C20.9349 17.8328 20.7769 18.2143 20.4956 18.4956C20.2143 18.7769 19.8328 18.9349 19.4349 18.9349H4.56494C4.16712 18.9349 3.78559 18.7769 3.50428 18.4956C3.22298 18.2143 3.06494 17.8328 3.06494 17.4349V7.59994C5.42494 8.83994 7.77494 10.0999 10.1349 11.3499C10.5565 11.6087 11.0104 11.8104 11.4849 11.9499C12.1793 12.063 12.8911 11.9171 13.4849 11.5399C14.9349 10.7799 16.3749 10.0099 17.8249 9.24994C18.8649 8.68994 19.8949 8.14994 20.9349 7.59994V17.4349Z" fill="#333333"/>
+                        <div class="d-flex gap-3 why-choose-us-card">
+                            <div>
+                                <svg class="benefit-icon" width="60" height="60" viewBox="0 0 60 60" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect opacity="0.1" x="0.355896" width="59.6441" height="59.6441" rx="2.18203"
+                                        fill="#5349BE" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M23.006 23.9167C23.006 20.0394 25.8926 15.8545 30.5559 15.8545C35.2192 15.8545 38.1058 20.0394 38.1058 23.9167C38.1058 29.6626 34.1868 33.2192 30.5559 33.2192C26.9251 33.2192 23.006 29.6626 23.006 23.9167ZM24.2917 24.57C24.5648 29.1617 27.6665 31.9785 30.5562 31.9785C33.4459 31.9785 36.5471 29.1624 36.8214 24.5719C34.9496 24.3213 33.2006 23.5318 31.7969 22.294C30.063 23.8283 27.8515 24.6674 25.5047 24.6674C25.1039 24.6674 24.7 24.6283 24.2917 24.57Z"
+                                        fill="#5349BE" />
+                                    <path opacity="0.5"
+                                        d="M41.8638 36.3772L35.3218 32.4644C33.7885 33.7839 31.9558 34.5095 30.1784 34.5095C28.4011 34.5095 26.5683 33.7839 25.0351 32.4644L18.4931 36.3772C17.5512 36.9404 16.9661 37.9709 16.9661 39.0659V43.917C16.9661 44.2638 17.248 44.5442 17.5953 44.5442H29.5493V38.2725C29.5493 37.9257 29.8305 37.6454 30.1784 37.6454C30.5264 37.6454 30.8076 37.9257 30.8076 38.2725V44.5442H42.7616C43.1089 44.5442 43.3907 44.2638 43.3907 43.917V39.0659C43.3907 37.9709 42.8056 36.9404 41.8638 36.3772Z"
+                                        fill="#5349BE" />
+                                </svg>
+                            </div>
+                            <div class="d-flex flex-column gap-2">
+                                <h4 class="mb-0">Easy feedback sharing</h4>
+                                <p class="mb-0">With lots of unique blocks, you can easily build a page without coding.
+                                    Build your next landing page.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row gap-4 gap-md-3 justify-content-center">
+                        <div class="d-flex gap-3 why-choose-us-card">
+                            <div>
+                                <svg class="benefit-icon" width="60" height="60" viewBox="0 0 60 60" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect opacity="0.1" x="0.355896" width="59.6441" height="59.6441" rx="2.18203"
+                                        fill="#68D585" />
+                                    <path opacity="0.5"
+                                        d="M42.7598 29.4446C41.6252 34.5461 36.1415 38.4281 29.5628 38.4281C28.6301 38.4281 27.6991 38.344 26.781 38.1845C29.0367 40.1376 32.529 41.1228 36.138 40.589L40.9684 42.9739C41.0506 43.0142 41.1399 43.0344 41.2291 43.0344C41.3359 43.0344 41.4421 43.0056 41.536 42.9486C41.7075 42.8438 41.8125 42.6584 41.8125 42.4586V38.0659C43.3192 36.7162 44.1457 35.0142 44.1457 33.2459C44.1457 31.894 43.6575 30.5881 42.7598 29.4446Z"
+                                        fill="#68D585" />
+                                    <path
+                                        d="M29.4242 17.3645C22.5549 17.3645 16.9669 21.7584 16.9669 27.1595C16.9669 29.2354 17.7861 31.2146 19.3397 32.8982V38.683C19.3397 38.8829 19.4465 39.0679 19.6209 39.1733C19.7164 39.2304 19.8243 39.2592 19.9329 39.2592C20.0236 39.2592 20.1144 39.239 20.198 39.1987L25.7327 36.5108C26.9398 36.8052 28.1802 36.9545 29.4242 36.9545C36.2935 36.9545 41.8815 32.5606 41.8815 27.1595C41.8815 21.7584 36.2935 17.3645 29.4242 17.3645Z"
+                                        fill="#68D585" />
+                                </svg>
+                            </div>
+                            <div class="d-flex flex-column gap-2">
+                                <h4 class="mb-0">Easy feedback sharing</h4>
+                                <p class="mb-0">With lots of unique blocks, you can easily build a page without coding.
+                                    Build your next landing page.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3 why-choose-us-card">
+                            <div>
+                                <svg class="benefit-icon" width="60" height="60" viewBox="0 0 60 60" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect opacity="0.1" width="59.6441" height="59.6441" rx="2.18203" fill="#F64B4B" />
+                                    <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M29.8138 40.0988L18.987 31.7168L16.6088 33.5584L29.8211 43.7893L43.0334 33.5584L40.6405 31.7095L29.8138 40.0988Z"
+                                        fill="#F64B4B" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M29.8213 36.2397L40.6333 27.9038L43.0336 26.0473L29.8213 15.855L16.609 26.0473L19.0019 27.8892L29.8213 36.2397Z"
+                                        fill="#F64B4B" />
+                                </svg>
+                            </div>
+                            <div class="d-flex flex-column gap-2">
+                                <h4 class="mb-0">Easy feedback sharing</h4>
+                                <p class="mb-0">With lots of unique blocks, you can easily build a page without coding.
+                                    Build your next landing page.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container px-4 px-sm-3 testimonials d-flex flex-column gap-4 gap-md-5">
+            <div class="d-flex flex-column gap-1 text-center heading-wrapper">
+                <h2 class="mb-0 fw-semibold d-flex flex-column">
+                    <span>
+                        Trusted by Thousands of
+                    </span>
+                    <span>
+                        Happy Customer
+                    </span>
+                </h2>
+                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut lab</p>
+            </div>
+
+            <div class="d-flex flex-column gap-4">
+                <div class="d-flex gap-3">
+                    <div class="card border">
+                        <div class="card-body d-flex flex-column p-4 gap-2">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h6 class="mb-0 fw-semibold">Viezh Robert</h6>
+                                    <p class="mb-0 font-small">Warsaw, Poland</p>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M8 0.416504L9.68386 5.59888H15.1329L10.7245 8.80176L12.4084 13.9841L8 10.7812L3.59161 13.9841L5.27547 8.80176L0.867076 5.59888H6.31614L8 0.416504Z"
+                                                fill="#5349BE" />
+                                        </svg>
+                                    </div>
+                                    <p class="mb-0 font-small">4.5</p>
+                                </div>
+                            </div>
+                            <p class="mb-0">“Wow... I am very happy to use this VPN, it turned out to be more than my
+                                expectations and so far there have been no problems. LaslesVPN always the best”.</p>
+
+                        </div>
+                    </div>
+                    <div class="card border d-none d-md-block">
+                        <div class="card-body d-flex flex-column p-4 gap-2">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h6 class="mb-0 fw-semibold">Viezh Robert</h6>
+                                    <p class="mb-0 font-small">Warsaw, Poland</p>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M8 0.416504L9.68386 5.59888H15.1329L10.7245 8.80176L12.4084 13.9841L8 10.7812L3.59161 13.9841L5.27547 8.80176L0.867076 5.59888H6.31614L8 0.416504Z"
+                                                fill="#5349BE" />
+                                        </svg>
+                                    </div>
+                                    <p class="mb-0 font-small">4.5</p>
+                                </div>
+                            </div>
+                            <p class="mb-0">“Wow... I am very happy to use this VPN, it turned out to be more than my
+                                expectations and so far there have been no problems. LaslesVPN always the best”.</p>
+
+                        </div>
+                    </div>
+                    <div class="card border d-none d-lg-block">
+                        <div class="card-body d-flex flex-column p-4 gap-2">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h6 class="mb-0 fw-semibold">Viezh Robert</h6>
+                                    <p class="mb-0 font-small">Warsaw, Poland</p>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M8 0.416504L9.68386 5.59888H15.1329L10.7245 8.80176L12.4084 13.9841L8 10.7812L3.59161 13.9841L5.27547 8.80176L0.867076 5.59888H6.31614L8 0.416504Z"
+                                                fill="#5349BE" />
+                                        </svg>
+                                    </div>
+                                    <p class="mb-0 font-small">4.5</p>
+                                </div>
+                            </div>
+                            <p class="mb-0">“Wow... I am very happy to use this VPN, it turned out to be more than my
+                                expectations and so far there have been no problems. LaslesVPN always the best”.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center justify-content-sm-between align-items-center">
+                    <div class="d-flex gap-2 carousel-indicator-wrapper">
+                        <div class="carousel-indicator active">
+                        </div>
+                        <div class="carousel-indicator">
+                        </div>
+                        <div class="carousel-indicator">
+                        </div>
+                        <div class="carousel-indicator">
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-1 d-none d-sm-block">
+                        <span>
+                            <svg width="30" height="31" viewBox="0 0 30 31" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M23.75 14.1661H8.925L13.4625 8.71612C13.6747 8.46084 13.7768 8.13174 13.7463 7.80121C13.7158 7.47068 13.5553 7.16579 13.3 6.95362C13.0447 6.74144 12.7156 6.63937 12.3851 6.66984C12.0546 6.70031 11.7497 6.86085 11.5375 7.11612L5.2875 14.6161C5.24545 14.6758 5.20785 14.7384 5.175 14.8036C5.175 14.8661 5.175 14.9036 5.0875 14.9661C5.03084 15.1094 5.00118 15.262 5 15.4161C5.00118 15.5702 5.03084 15.7228 5.0875 15.8661C5.0875 15.9286 5.0875 15.9661 5.175 16.0286C5.20785 16.0938 5.24545 16.1565 5.2875 16.2161L11.5375 23.7161C11.655 23.8572 11.8022 23.9707 11.9686 24.0485C12.1349 24.1262 12.3164 24.1664 12.5 24.1661C12.7921 24.1667 13.0751 24.065 13.3 23.8786C13.4266 23.7737 13.5312 23.6448 13.6079 23.4994C13.6846 23.3539 13.7318 23.1948 13.7469 23.0311C13.762 22.8674 13.7447 22.7023 13.6959 22.5453C13.6471 22.3883 13.5678 22.2424 13.4625 22.1161L8.925 16.6661H23.75C24.0815 16.6661 24.3995 16.5344 24.6339 16.3C24.8683 16.0656 25 15.7476 25 15.4161C25 15.0846 24.8683 14.7667 24.6339 14.5322C24.3995 14.2978 24.0815 14.1661 23.75 14.1661Z"
+                                    fill="#222222" />
                             </svg>
-                                                                       
-                            <div class="d-flex flex-column gap-2">
-                                <h5 class="mb-0">Email Us:</h5>
-                                <a class="text-decoration-none text-secondary" href="mailto:omomowosymeon45@gmail.com">omowosymen45@gmail.com</a>
-                            </div>
+                        </span>
+                        <span>
+                            <svg width="30" height="31" viewBox="0 0 30 31" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.25 14.1661H21.075L16.5375 8.71612C16.3253 8.46084 16.2232 8.13174 16.2537 7.80121C16.2842 7.47068 16.4447 7.16579 16.7 6.95362C16.9553 6.74144 17.2844 6.63937 17.6149 6.66984C17.9454 6.70031 18.2503 6.86085 18.4625 7.11612L24.7125 14.6161C24.7545 14.6758 24.7922 14.7384 24.825 14.8036C24.825 14.8661 24.825 14.9036 24.9125 14.9661C24.9692 15.1094 24.9988 15.262 25 15.4161C24.9988 15.5702 24.9692 15.7228 24.9125 15.8661C24.9125 15.9286 24.9125 15.9661 24.825 16.0286C24.7922 16.0938 24.7545 16.1565 24.7125 16.2161L18.4625 23.7161C18.345 23.8572 18.1978 23.9707 18.0314 24.0485C17.8651 24.1262 17.6836 24.1664 17.5 24.1661C17.2079 24.1667 16.9249 24.065 16.7 23.8786C16.5734 23.7737 16.4688 23.6448 16.3921 23.4994C16.3154 23.3539 16.2682 23.1948 16.2531 23.0311C16.238 22.8674 16.2553 22.7023 16.3041 22.5453C16.3529 22.3883 16.4322 22.2424 16.5375 22.1161L21.075 16.6661H6.25C5.91848 16.6661 5.60054 16.5344 5.36612 16.3C5.13169 16.0656 5 15.7476 5 15.4161C5 15.0846 5.13169 14.7667 5.36612 14.5322C5.60054 14.2978 5.91848 14.1661 6.25 14.1661Z"
+                                    fill="#486284" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="d-flex justify-content-center py-0">
+            <div
+                class="d-flex flex-column text-center text-lg-start flex-lg-row justify-content-center gap-4 align-items-center cta rounded-4">
+                <div class="d-flex flex-column gap-1 col-md-9 col-xl-8 text-white">
+                    <h2 class="mb-0 fw-semibold">Ready to Discard that Paper Menu?</h2>
+                    <p class="mb-0 col-lg-11">Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat,
+                        viverra magna risus aliquam massa. Ac aliquam ac volutpat.</p>
+                </div>
+                <div>
+                    <button type="button" title="btn" class="btn btn-secondary px-3">Get Started</button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-5 px-4 px-sm-3 container d-flex flex-column gap-4">
+            <div
+                class="d-flex flex-row justify-content-center align-items-center gap-4 pb-5 border-bottom contact-wrapper">
+                <div class="d-flex flex-column gap-1 contact order-1 order-md-0">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20.6981 15.1997L16.2713 13.2188C16.0996 13.1445 15.9122 13.1142 15.726 13.1306C15.5397 13.1469 15.3604 13.2095 15.2044 13.3125C15.1919 13.3204 15.18 13.3292 15.1688 13.3388L12.8438 15.3207C12.792 15.3522 12.7333 15.3705 12.6728 15.374C12.6123 15.3774 12.5519 15.3658 12.4969 15.3403C10.9744 14.6053 9.39845 13.0416 8.66345 11.5369C8.63745 11.4823 8.62538 11.4222 8.62832 11.3618C8.63127 11.3014 8.64914 11.2427 8.68032 11.191L10.6678 8.82753C10.6772 8.81628 10.6856 8.80409 10.6941 8.79191C10.7968 8.6361 10.8592 8.45717 10.8755 8.27125C10.8919 8.08534 10.8618 7.89827 10.7878 7.72691L8.80314 3.30753C8.70732 3.0837 8.54148 2.89699 8.33051 2.77545C8.11954 2.6539 7.87483 2.60408 7.63314 2.63347C6.45336 2.78902 5.37054 3.36872 4.58694 4.26428C3.80334 5.15985 3.37254 6.31005 3.37501 7.50003C3.37501 14.7375 9.26251 20.625 16.5 20.625C17.69 20.6275 18.8402 20.1967 19.7358 19.4131C20.6313 18.6295 21.211 17.5467 21.3666 16.3669C21.3957 16.1263 21.3464 15.8827 21.226 15.6724C21.1056 15.4621 20.9204 15.2963 20.6981 15.1997ZM20.625 16.2732C20.4926 17.2723 20.0009 18.189 19.2417 18.8519C18.4825 19.5148 17.5079 19.8785 16.5 19.875C9.67689 19.875 4.12501 14.3232 4.12501 7.50003C4.12152 6.49217 4.48523 5.51754 5.14813 4.75835C5.81103 3.99917 6.72775 3.50742 7.72689 3.37503C7.74187 3.37413 7.7569 3.37413 7.77189 3.37503C7.84587 3.37566 7.91801 3.39816 7.97923 3.4397C8.04045 3.48124 8.08802 3.53996 8.11595 3.60847L10.095 8.02784C10.1181 8.08186 10.1282 8.14054 10.1244 8.19916C10.1207 8.25779 10.1032 8.31471 10.0734 8.36534L8.08689 10.7278C8.07751 10.74 8.06814 10.7513 8.0597 10.7644C7.95386 10.9263 7.89153 11.1126 7.87872 11.3056C7.86591 11.4986 7.90306 11.6916 7.98657 11.866C8.80126 13.5338 10.4813 15.2016 12.1678 16.0163C12.3434 16.0993 12.5375 16.1354 12.7312 16.1211C12.9249 16.1068 13.1116 16.0426 13.2731 15.9347L13.3078 15.9085L15.6356 13.9285C15.6854 13.898 15.7417 13.8799 15.7999 13.8755C15.8581 13.8711 15.9165 13.8806 15.9703 13.9032L20.3963 15.8869C20.471 15.918 20.5336 15.9724 20.5748 16.042C20.616 16.1116 20.6336 16.1927 20.625 16.2732Z"
+                            fill="#333333" />
+                    </svg>
+
+                    <div class="d-flex flex-column gap-2">
+                        <h5 class="mb-0">Call Us:</h5>
+                        <a class="text-decoration-none text-secondary" href="tel:+2348099626426">+2348099626426</a>
+                    </div>
+                </div>
+                <div class="d-flex flex-column flex-md-row gap-4 order-md-1">
+                    <div class="d-flex flex-column gap-1 contact">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2.625C10.1458 2.625 8.33324 3.17483 6.79153 4.20497C5.24982 5.23511 4.04821 6.69929 3.33863 8.41234C2.62906 10.1254 2.44341 12.0104 2.80514 13.829C3.16688 15.6475 4.05976 17.318 5.37088 18.6291C6.682 19.9402 8.35246 20.8331 10.171 21.1949C11.9896 21.5566 13.8746 21.3709 15.5877 20.6614C17.3007 19.9518 18.7649 18.7502 19.795 17.2085C20.8252 15.6668 21.375 13.8542 21.375 12C21.3723 9.51443 20.3837 7.13145 18.6261 5.37389C16.8686 3.61633 14.4856 2.62773 12 2.625ZM12 20.625C10.2941 20.625 8.62658 20.1192 7.20821 19.1714C5.78984 18.2237 4.68435 16.8767 4.03154 15.3006C3.37874 13.7246 3.20793 11.9904 3.54073 10.3173C3.87353 8.64426 4.69498 7.10743 5.90121 5.9012C7.10744 4.69498 8.64426 3.87352 10.3174 3.54073C11.9904 3.20793 13.7246 3.37873 15.3006 4.03154C16.8767 4.68434 18.2237 5.78983 19.1714 7.20821C20.1192 8.62658 20.625 10.2941 20.625 12C20.6225 14.2867 19.713 16.4791 18.0961 18.0961C16.4791 19.713 14.2867 20.6225 12 20.625ZM17.625 12C17.625 12.0995 17.5855 12.1948 17.5152 12.2652C17.4448 12.3355 17.3495 12.375 17.25 12.375H12C11.9005 12.375 11.8052 12.3355 11.7348 12.2652C11.6645 12.1948 11.625 12.0995 11.625 12V6.75C11.625 6.65054 11.6645 6.55516 11.7348 6.48483C11.8052 6.41451 11.9005 6.375 12 6.375C12.0995 6.375 12.1948 6.41451 12.2652 6.48483C12.3355 6.55516 12.375 6.65054 12.375 6.75V11.625H17.25C17.3495 11.625 17.4448 11.6645 17.5152 11.7348C17.5855 11.8052 17.625 11.9005 17.625 12Z"
+                                fill="#333333" />
+                        </svg>
+                        <div class="d-flex flex-column gap-2">
+                            <h5 class="mb-0">Working Hours:</h5>
+                            <a class="text-decoration-none text-secondary" href="#">Mon - Fri : 8.00am - 4.00pm</a>
                         </div>
                     </div>
-                    
-                </div>
+                    <div class="d-flex flex-column gap-1 contact">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19.4349 4.06494H4.56494C3.9019 4.06494 3.26602 4.32833 2.79717 4.79717C2.32833 5.26602 2.06494 5.9019 2.06494 6.56494V17.4349C2.06494 18.098 2.32833 18.7339 2.79717 19.2027C3.26602 19.6715 3.9019 19.9349 4.56494 19.9349H19.4349C20.098 19.9349 20.7339 19.6715 21.2027 19.2027C21.6715 18.7339 21.9349 18.098 21.9349 17.4349V6.56494C21.9349 5.9019 21.6715 5.26602 21.2027 4.79717C20.7339 4.32833 20.098 4.06494 19.4349 4.06494ZM4.56494 5.06494H19.4349C19.8134 5.06409 20.178 5.20727 20.4547 5.46542C20.7314 5.72357 20.8995 6.07735 20.9249 6.45494C18.4549 7.77494 15.9749 9.08494 13.4949 10.4049C13.16 10.6162 12.8049 10.7937 12.4349 10.9349C12.1449 10.9924 11.8458 10.9873 11.5579 10.9201C11.2699 10.8528 10.9996 10.7249 10.7649 10.5449C9.34494 9.79494 7.92494 9.03494 6.51494 8.28494C5.37494 7.68494 4.21494 7.07494 3.07494 6.46494C3.0979 6.08557 3.26496 5.72932 3.54194 5.46907C3.81892 5.20882 4.18488 5.06425 4.56494 5.06494ZM20.9349 17.4349C20.9349 17.8328 20.7769 18.2143 20.4956 18.4956C20.2143 18.7769 19.8328 18.9349 19.4349 18.9349H4.56494C4.16712 18.9349 3.78559 18.7769 3.50428 18.4956C3.22298 18.2143 3.06494 17.8328 3.06494 17.4349V7.59994C5.42494 8.83994 7.77494 10.0999 10.1349 11.3499C10.5565 11.6087 11.0104 11.8104 11.4849 11.9499C12.1793 12.063 12.8911 11.9171 13.4849 11.5399C14.9349 10.7799 16.3749 10.0099 17.8249 9.24994C18.8649 8.68994 19.8949 8.14994 20.9349 7.59994V17.4349Z"
+                                fill="#333333" />
+                        </svg>
 
-                <div class="d-flex flex-column gap-2 text-center">
-                    <div class="d-flex justify-content-center gap-2">
-                        <a href="#"><img src="./images/basil_facebook-outline.svg" alt="social-link" class="img-fluid"></a>
-                        <a href="#"><img src="./images/circum_twitter.svg" alt="social-link" class="img-fluid"></a>
-                        <a href="#"><img src="./images/openmoji_instagram.svg" alt="social-link" class="img-fluid"></a>
+                        <div class="d-flex flex-column gap-2">
+                            <h5 class="mb-0">Email Us:</h5>
+                            <a class="text-decoration-none text-secondary"
+                                href="mailto:omomowosymeon45@gmail.com">omowosymen45@gmail.com</a>
+                        </div>
                     </div>
-                    <p class="mb-0 font-small">&copy; copyright 2022 QuickMenu. All Rights Reserved</p>
                 </div>
-                
-                
-               
-                    
 
-            </footer>
-            
-           
-        </main>
-    </body>
+            </div>
+
+            <div class="d-flex flex-column gap-2 text-center">
+                <div class="d-flex justify-content-center gap-2">
+                    <a href="#"><img src="./images/basil_facebook-outline.svg" alt="social-link" class="img-fluid"></a>
+                    <a href="#"><img src="./images/circum_twitter.svg" alt="social-link" class="img-fluid"></a>
+                    <a href="#"><img src="./images/openmoji_instagram.svg" alt="social-link" class="img-fluid"></a>
+                </div>
+                <p class="mb-0 font-small">&copy; copyright 2022 QuickMenu. All Rights Reserved</p>
+            </div>
+        </footer>
+
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+</body>
+
 </html>

@@ -64,8 +64,25 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
+.offcanvas.offcanvas-end{
+    width: 350px !important;
+}
+
 .hero{
     padding-top: 2.325rem;
+}
+
+.blob{
+    position: absolute;
+    background-image: url('/images/hero-blob.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50rem;
+    height: 55rem;
+    z-index: -1;
+    bottom: -11rem;
+    left: -42rem;
 }
 
 h1{
@@ -99,20 +116,60 @@ section,
 }
 
 section.how-it-works{
-    gap: 13rem;
+    gap: 14rem;
+}
+
+.dotted-blob{
+    position: absolute;
+    background-image: url(/images/dotted-blob.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 8.5rem;
+    height: 9.5rem;
+    z-index: -1;
+    top: -1.4rem;
+    right: 0;
 }
 
 .video-section-bg{
-    padding-bottom: 8rem;
+    overflow-x: clip;
+    padding-bottom: 6rem;
     background-image: url('/images/BG.svg');
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
 }
 
+.video-section.dotted-blob{
+    position: absolute;
+    background-image: url(/images/dotted-blob.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 9.9rem;
+    height: 11rem;
+    z-index: 100;
+    top: -2.5rem;
+    left: -2rem;
+}
+
+.video-section.dotted-blob-2{
+    position: absolute;
+    background-image: url(/images/dotted-blob.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 9.9rem;
+    height: 11rem;
+    z-index: 100;
+    bottom: -6rem;
+    right: -2rem;
+}
+
 .video-section-bg .img-fluid{
     width: 900px;
-    margin-top: -5rem;
+    margin-top: -7rem;
 }
 
 .why-choose-us-card{
@@ -145,9 +202,21 @@ section.how-it-works{
 
 
 @media screen and (min-width: 1600px) {
+    .blob{
+        width: 50rem;
+        height: 51rem;
+        z-index: -1;
+        bottom: -9rem;
+        left: -36rem;
+    }
+
     section.how-it-works{
         align-items: center;
         gap: 20rem;
+    }
+
+    .dotted-blob{
+        right: 51rem;
     }
 
     .video-section-bg{
@@ -163,15 +232,21 @@ section.how-it-works{
 
 @media screen and (max-width: 1200px) {
     section.how-it-works{
-        gap: 11rem;
+        gap: 13rem;
     }
 
     .video-section-bg{
-        padding-bottom: 6rem;
+        padding-bottom: 5rem;
     }
 
     .video-section-bg .img-fluid{
         width: 70%;
+    }
+}
+
+@media screen and (max-width: 1130px) {
+    .blob{
+        left: -36rem;
     }
 }
 
@@ -180,12 +255,36 @@ section.how-it-works{
         width: 100%;
     }
 
-    section.how-it-works{
-        gap: 10rem;
+    .blob{
+        width: 43rem;
+        height: 43rem;
+        bottom: -10rem;
+        left: -34rem;
     }
 
-    .video-section-bg{
-        padding-bottom: 6rem;
+    section.how-it-works{
+        gap: 12rem;
+    }
+
+    .video-section.dotted-blob{
+        width: 7.4rem;
+        height: 8.3rem;
+        z-index: 100;
+        top: -3rem;
+        left: -2rem;
+    }
+
+    .video-section.dotted-blob-2{
+        width: 7.4rem;
+        height: 8.3rem;
+        z-index: 100;
+        bottom: -4.5rem;
+        right: -2rem;
+    }
+
+    .benefit-icon {
+        width: 40px !important;
+        height: 40px !important;
     }
 
     .cta{
@@ -194,7 +293,34 @@ section.how-it-works{
     }
 }
 
+@media screen and (max-width: 830px) {
+    .blob{
+        left: -30rem;
+    }
+}
+
+
 @media screen and (max-width: 767px) {
+    .blob{
+        width: 35rem;
+        height: 37rem;
+        left: -29rem;
+    }
+
+    .dotted-blob{
+        width: 5.5rem;
+        height: 6.2rem;
+    }
+
+    .video-section-bg{
+        z-index: 101;
+    }
+
+    .video-section.dotted-blob{
+        z-index: -100;
+    }
+
+
     .steps {
         width: 45px;
         height: 45px;
@@ -217,9 +343,61 @@ section.how-it-works{
     }
 }
 
+@media screen and (max-width: 630px) {
+    .blob{
+        left: -27rem;
+    }
+}
+
 @media screen and (max-width: 575px) {
+    section,
+    .section{
+        padding-top: 2.375rem;
+        padding-bottom: 2.375rem;
+    }
+
+    .hero{
+        padding-top: 1rem;
+    }
+
+    .blob{
+        width: 30rem;
+        height: 33rem;
+        left: -20rem;
+        bottom: -7rem;
+    }
+
+    .dotted-blob{
+        top: 0;
+        right: -1rem;
+    }
+
     section.how-it-works{
-        gap: 9rem;
+        overflow-x: clip;
+        gap: 7rem;
+    }
+
+    .video-section-bg{
+        padding-bottom: 3rem;
+    }
+
+    .video-section.dotted-blob{
+        width: 8.4rem;
+        height: 9.3rem;
+        top: -5rem;
+        left: -2rem;
+    }
+
+    .video-section.dotted-blob-2{
+        width: 8.4rem;
+        height: 9.3rem;
+        bottom: -3.5rem;
+        right: -2rem;
+    }
+
+    .video-section-bg .img-fluid{
+        margin-top: -3rem;
+        z-index: 101;
     }
 
     .cta {
@@ -228,20 +406,107 @@ section.how-it-works{
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 550px) {
+    .blob{
+        bottom: -8rem;
+    }
+
+    .video-section.dotted-blob {
+        width: 6.5rem;
+        height: 7.3rem;
+        top: -4rem;
+        left: -1rem;
+    }
+
+    .video-section.dotted-blob-2 {
+        width: 6.5rem;
+        height: 7.3rem;
+        bottom: -2.5rem;
+        right: -1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .blob{
+        bottom: -9rem;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .blob{
+        width: 25rem;
+        height: 27rem;
+        left: -17rem;
+        bottom: -6rem;
+    }
+
     section.how-it-works{
-        gap: 5rem;
+        gap: 8rem;
+    }
+
+    .video-section.dotted-blob {
+        top: -5rem;
+        left: -1.7rem;
+    }
+
+    .video-section.dotted-blob-2 {
+        bottom: -2.2rem;
+        right: -1.7rem;
     }
 
     .video-section-bg .img-fluid{
-        margin-top: 0;
+        margin-top: -4rem;
     }
 
+    .card.border{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    section.how-it-works{
+        gap: 7rem;
+    }
+    
     .contact-wrapper{
         flex-direction: column-reverse !important;
     }
 
     .contact{
         width: 240px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .blob{
+        bottom: -7rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .blob{
+        width: 22rem;
+        height: 24rem;
+        left: -16rem;
+        bottom: -6rem;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .video-section-bg{
+        padding-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .blob{
+        bottom: -7rem;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .blob{
+        width: 20rem;
+        height: 23rem;
     }
 }
