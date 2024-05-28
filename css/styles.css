@@ -74,7 +74,7 @@ body{
 
 .blob{
     position: absolute;
-    background-image: url('/images/hero-blob.svg');
+    background-image: url('../images/hero-blob.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -143,7 +143,7 @@ section.how-it-works{
 
 .dotted-blob{
     position: absolute;
-    background-image: url(/images/dotted-blob.svg);
+    background-image: url('../images/dotted-blob.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -157,7 +157,7 @@ section.how-it-works{
 .video-section-bg{
     overflow-x: clip;
     padding-bottom: 6rem;
-    background-image: url('/images/BG.svg');
+    background-image: url('../images/BG.svg');
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -165,7 +165,7 @@ section.how-it-works{
 
 .video-section.dotted-blob{
     position: absolute;
-    background-image: url(/images/dotted-blob.svg);
+    background-image: url('../images/dotted-blob.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -178,7 +178,7 @@ section.how-it-works{
 
 .video-section.dotted-blob-2{
     position: absolute;
-    background-image: url(/images/dotted-blob.svg);
+    background-image: url('../images/dotted-blob.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
